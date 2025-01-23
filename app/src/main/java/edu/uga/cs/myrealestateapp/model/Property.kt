@@ -16,6 +16,7 @@ data class Status(
     val transactionID: String?
 )
 
+
 data class Property(
     val identifier: Identifier?,
     val lot: Lot?,
