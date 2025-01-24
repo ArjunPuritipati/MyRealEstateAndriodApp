@@ -8,4 +8,6 @@ import retrofit2.http.Query
 interface PropertyApiService {
     @GET("property/detail")
     suspend fun getPropertyDetails(@Query("attomid") attomId: String): Response<ApiResponse>
+
+
 }
