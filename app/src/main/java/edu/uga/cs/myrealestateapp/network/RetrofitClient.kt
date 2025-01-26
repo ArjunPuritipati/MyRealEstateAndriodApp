@@ -5,26 +5,29 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
     private const val BASE_URL = "https://api.gateway.attomdata.com/propertyapi/v1.0.0/"
 
-    // Create a Gson instance with custom deserialization logic if needed
     private val gson by lazy {
         GsonBuilder()
-            .setLenient() // Makes the parser lenient for potential formatting issues
+            .setLenient()
             .create()
     }
 
     private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create(gson)) // Use the Gson instance
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(
                 OkHttpClient.Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS) // Increase connection timeout
+                    .readTimeout(30, TimeUnit.SECONDS) // Increase read timeout
+                    .writeTimeout(30, TimeUnit.SECONDS) // Increase write timeout
                     .addInterceptor { chain ->
                         val request = chain.request().newBuilder()
-                            .addHeader("apikey", "73b3e941adce0e0de6c8f635291e6b36") // Replace with your actual API key
+                            .addHeader("apikey", "4373345c2847ed18519c437577abd9fa") // Replace with your API key
                             .build()
                         chain.proceed(request)
                     }

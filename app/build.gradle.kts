@@ -1,11 +1,12 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.android") version "1.8.22"
 }
 
 android {
     namespace = "edu.uga.cs.myrealestateapp"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "edu.uga.cs.myrealestateapp"
         minSdk = 21
@@ -39,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.8"
     }
     packaging {
         resources {
@@ -49,38 +50,45 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
-    implementation("androidx.activity:activity-compose:1.10.0")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation("androidx.activity:activity-compose:1.7.2")
+
+    // Updated Compose BOM and aligned versions
+    implementation(platform("androidx.compose:compose-bom:2024.01.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material3:material3:1.1.0")
+
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.6.0")
+
+    // Lifecycle Compose
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+
+    // Retrofit and OkHttp for API
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // Material Design
+    implementation("androidx.compose.material:material:1.4.3")
+
+    // Google Maps Compose
+    implementation("com.google.maps.android:maps-compose:2.11.0")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.01.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
-
-    // initial added dependencies
-    implementation("androidx.compose.material3:material3:1.1.0")
-    implementation("androidx.navigation:navigation-compose:2.6.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
-
-    // for interation of APIs
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0") // For JSON parsing
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4") // Coroutines
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0") // Optional: Logging
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-
-    // for ui text in detail Screen
-    implementation ("androidx.compose.material:material:1.4.0")
-    implementation ("androidx.compose.ui:ui:1.4.0")
-
 }
