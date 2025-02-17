@@ -1,5 +1,5 @@
 Overview
-The Real Estate Finder App is an Android application designed to help Asian immigrants and homebuyers find properties that align with their cultural, community, and lifestyle needs. The app integrates real-time property listings using ATTOM API, providing insights on demographics, schools, weather, temples, grocery stores, and other essential amenities.
+- The Real Estate Finder App is an Android application designed to help Asian immigrants and homebuyers find properties that align with their cultural, community, and lifestyle needs. The app integrates real-time property listings using ATTOM API, providing insights on demographics, schools, weather, temples, grocery stores, and other essential amenities.
 
 Features
 - ✅ Real-time property listings using ATTOM API
