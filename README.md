@@ -14,29 +14,15 @@ Tech Stack
 - UI Framework: Jetpack Compose
 - Networking: Retrofit & OkHttp
 - State Management: ViewModel & LiveData
-- Maps & Location: Google Maps API
 - Dependency Injection: Hilt
 
-#Installation & Setup
-- 1. Clone the Repository
-- bash
-- Copy
-- Edit
-- git clone https://github.com/your-username/real-estate-android-app.git
-- cd real-estate-android-app
-- 2. Open in Android Studio
-- Open Android Studio.
-- Select "Open an Existing Project" and navigate to the cloned repository.
-- 3. Build & Run the App
-- Connect an Android device or launch an emulator.
-- Click Run ▶ in Android Studio.
-
 Usage
-- Search for properties by entering a location or ZIP code.
-- Filter results based on price, amenities, and cultural preferences.
-- View property details including images, descriptions, and nearby attractions.
-- Save favorite properties for later reference.
-- Navigate to locations using Google Maps integration.
+1. Signup or create your user profile
+2. Search for properties by entering a location or ZIP code.
+3. Filter results based on price, amenities, and cultural preferences.
+4. View property details including images, descriptions, and nearby attractions.
+5. Save favorite properties for later reference.
+6. Navigate to locations using Google Maps integration.
 
 Future Enhancements
 - 🚀 AI-powered property recommendations
@@ -44,4 +30,5 @@ Future Enhancements
 - 🔔 Push notifications for new listings
 - 🗺️ Enhanced map features with street view and neighborhood insights
 - Database: Room (for saving user preferences and favorites)
+- Maps & Location: Google Maps API
 
